@@ -8,9 +8,17 @@
 </head>
 <body>
     <header>
-        <!-- Your navigation bar goes here -->
+    <nav>
+            <ul>
+                <li><a href="create-account.php">Register</a></li>
+                <li><a href="login.php">Login</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <div class="left-background"></div> 
+    <div class="right-background"></div> 
+    
     <div class="container">
         <h1>Create Currency Account</h1>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -46,7 +54,7 @@
 
             // Check if form fields are not empty
             if (empty($firstname) || empty($lastname) || empty($email) || empty($password) || empty($confirmPassword) || empty($address) || empty($phone)) {
-                echo "<p style='color: red;'>Error: Please fill in all fields.</p>";
+                echo "<p style='color: red;'>Error: Registeration failed, Please fill in all fields.</p>";
             } else {
                 // Check if passwords match
                 if ($password !== $confirmPassword) {
