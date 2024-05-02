@@ -51,7 +51,7 @@
                 echo "<p style='color: red;'>Error: Unable to open database.</p>";
             } else {
                 // Prepare the SELECT statement for users
-                $stmt_user = $db->prepare("SELECT * FROM User WHERE email = :username AND password = :password");
+                $stmt_user = $db->prepare("SELECT * FROM User WHERE email = :username AND password = :password AND valid = 1");
                 $stmt_user->bindParam(':username', $username);
                 $stmt_user->bindParam(':password', $password);
                 $result_user = $stmt_user->execute();
@@ -69,7 +69,7 @@
                 $stmt_user->close();
                 $db->close();
 
-                // Display error message for invalid credentials
+                // Display error message for invalid credentials or inactive accounts
                 echo "<p style='color: red;'>Invalid username or password for user login. Please try again.</p>";
             }
         }
