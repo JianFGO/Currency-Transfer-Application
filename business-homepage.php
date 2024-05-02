@@ -81,11 +81,10 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Business Homepage</h1>
         <nav>
             <ul>
                 <li><a href="business-homepage.php">Transaction Overview</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <li><a href="business-logout.php">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -94,7 +93,7 @@
     <div class="right-background"></div> 
     
     <div class="container">
-        <h2>Transaction Overview</h2>
+        <h2>Transaction Log</h2>
         <?php
         // Database connection
         $db = new PDO("sqlite:C:/xampp/htdocs/Currency-Transfer-Application/Currency_Database.db");
