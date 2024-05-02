@@ -58,9 +58,6 @@
     <header>
         <nav>
             <ul>
-                <li><a href="create-account.php">Create Currency Account</a></li>
-                <li><a href="delete-account.php">Delete Currency Account</a></li>
-                <li><a href="euro-transfer.php">Transfer Funds</a></li> <!-- Updated link -->
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
