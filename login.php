@@ -40,7 +40,7 @@ if (isset($_POST["user_login"])) {
         $db->close();
 
         // Display error message for invalid credentials or inactive accounts
-        echo "<p style='color: red;'>Invalid username or password for user login. Please try again.</p>";
+        $error_message = "Invalid username or password for user login. Please try again.";
     }
 }
 
@@ -77,7 +77,7 @@ if (isset($_POST["admin_login"])) {
         $db->close();
 
         // Display error message for invalid credentials
-        echo "<p style='color: red;'>Invalid admin ID or password for admin login. Please try again.</p>";
+        $error_message = "Invalid admin ID or password for admin login. Please try again.";
     }
 }
 
@@ -114,7 +114,7 @@ if (isset($_POST["business_manager_login"])) {
         $db->close();
 
         // Display error message for invalid credentials
-        echo "<p style='color: red;'>Invalid business manager ID or password for business manager login. Please try again.</p>";
+        $error_message = "Invalid business manager ID or password for business manager login. Please try again.";
     }
 }
 ?>
@@ -126,6 +126,11 @@ if (isset($_POST["business_manager_login"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css"> <!-- You can link your CSS file here -->
     <title>Login</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -151,7 +156,10 @@ if (isset($_POST["business_manager_login"])) {
         </form>
 
         <?php
-        // Display any error messages or additional information here if needed
+        // Display error messages if any
+        if (isset($error_message)) {
+            echo "<p class='error-message'>$error_message</p>";
+        }
         ?>
     </div>
 </body>
