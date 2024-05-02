@@ -84,6 +84,7 @@
         <nav>
             <ul>
                 <li><a href="business-homepage.php">Transaction Overview</a></li>
+                <li><a href="refund.php">Dashboard</a></li>
                 <li><a href="business-logout.php">Logout</a></li>
             </ul>
         </nav>
